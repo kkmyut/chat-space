@@ -1,17 +1,8 @@
-== README
+#README
 
-* Database creation
+## データベース設計
 
-# README
-
-
-* Database creation
-
-
-
-# データベース設計
-
-## ①users
+### ①users
 
 
 |column|type|
@@ -26,14 +17,14 @@
 
 ### オプション
 * has_many :messages,through: :user_groups
-* has_many :groups
+* has_many :groups　
 * name null: false
 * mail null: false
 * password null: false
 * ちなみにmailとdeviseに一意性（add_index unique: true）がいるけどdeviseで入るからやっぱりいらない
 * add_index :users,  :name
 
-## ②groups
+### ②groups
 
 
 |column|type|
@@ -47,7 +38,7 @@
 * has_many :users
 * name null: false
 
-## ③messages
+### ③messages　
 
 |column|type|
 |--:|--:|
@@ -64,7 +55,7 @@
 * t.references :user, foreign_key: true
 * t.references :group, foreign_key: true
 
-## ④user_groups      中間テーブル
+### ④user_groups　　　　中間テーブル
 
 |column|type|
 |--:|--:|
@@ -77,4 +68,3 @@
 * belongs_to :group
 * t.references :user, foreign_key: true
 * t.references :group, foreign_key: true
-
