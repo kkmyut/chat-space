@@ -17,7 +17,7 @@
 
 ### オプション
 * has_many :messages,through: :user_groups
-* has_many :groups　
+* has_many :groups
 * name null: false
 * mail null: false
 * password null: false
