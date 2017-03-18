@@ -45,3 +45,7 @@ group :development do
   gem 'spring'
 end
 
+#railsにhamlを導入するためのgem
+gem 'haml-rails'
+#railsのerbhamlに変換するためのgem
+gem 'erb2haml'
