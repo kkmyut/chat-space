@@ -14,7 +14,7 @@
 
 ### オプション
 * has_many :messages,through: :user_groups
-* has_many :groups　
+* has_many :groups
 * add_index :users,  :name
 
 ### ②groups
@@ -29,7 +29,7 @@
 * has_many :messages,through: :user_groups
 * has_many :users
 
-### ③messages　
+### ③messages
 
 |column|type|
 |--:|--:|
@@ -45,7 +45,7 @@
 * t.references :user, foreign_key: true
 * t.references :group, foreign_key: true
 
-### ④user_groups　　　　中間テーブル
+### ④user_groups    中間テーブル
 
 |column|type|
 |--:|--:|
