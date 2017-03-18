@@ -4,12 +4,10 @@
 
 
 |column|type|option|
-|--:|--:|--:|--:|
+|--:|--:|--:|
 |name|string|null false|
 |mail|string|null false,unique true|
-|password|string|null false|-|
-
-
+|password|string|null false|
 
 
 ### association
