@@ -5,7 +5,7 @@
 
 |column|type|option|
 |--:|--:|--:|
-|name|string|null false|
+|name|string|null false,add_index|
 |mail|string|null false,unique true|
 |password|string|null false|
 
@@ -13,7 +13,6 @@
 ### association
 * has_many :messages,through: :user_groups
 * has_many :groups　
-* add_index :users,  :name
 
 ### ②groups
 
