@@ -3,57 +3,54 @@
 ### ①users
 
 
-|column|type|null|unique|
+|column|type|option|
 |--:|--:|--:|--:|
-|name|string|false|-|
-|mail|string|false|true|
-|password|string|false|-|
+|name|string|null false|
+|mail|string|null false,unique true|
+|password|string|null false|-|
 
 
 
 
-### オプション
+### association
 * has_many :messages,through: :user_groups
-* has_many :groups
+* has_many :groups　
 * add_index :users,  :name
 
 ### ②groups
 
 
-|column|type|null|
+|column|type|option|
 |--:|--:|--:|
-|name|string|false|
+|name|string|null false|
 
 
-### オプション
+### association
 * has_many :messages,through: :user_groups
 * has_many :users
 
-### ③messages
+### ③messages　
 
-|column|type|
-|--:|--:|
-|text|string|
-|image|string|
-|user_id|references|
-|group_id|references|
+|column|type|option|
+|--:|--:|--:|
+|text|string||
+|image|string||
+|user_id|references|foreign_key|
+|group_id|references|foreign_key|
 
+
+### association
+* belongs_to :user
+* belongs_to :group
+
+### ④user_groups　　　　中間テーブル
+
+|column|type|option|
+|--:|--:|--:|
+|user_id|references|foreign_key|
+|group_id|references|foreign_key|
 
 ### オプション
 * belongs_to :user
 * belongs_to :group
-* t.references :user, foreign_key: true
-* t.references :group, foreign_key: true
 
-### ④user_groups    中間テーブル
-
-|column|type|
-|--:|--:|
-|user_id|references|
-|group_id|references|
-
-### オプション
-* belongs_to :user
-* belongs_to :group
-* t.references :user, foreign_key: true
-* t.references :group, foreign_key: true
