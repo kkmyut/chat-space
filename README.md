@@ -47,7 +47,7 @@
 |user_id|references|foreign_key|
 |group_id|references|foreign_key|
 
-### オプション
+### association
 * belongs_to :user
 * belongs_to :group
 
