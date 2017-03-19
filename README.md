@@ -34,6 +34,7 @@
 |image|string|
 
 user references
+
 group references
 
 ### association
@@ -43,6 +44,7 @@ group references
 ### ④user_groups　　　　中間テーブル
 
 user references
+
 group references
 
 
