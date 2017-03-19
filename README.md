@@ -32,10 +32,8 @@
 |--:|--:|
 |text|string|
 |image|string|
-
-user references
-
-group references
+|user|references|
+|group|references|
 
 ### association
 * belongs_to :user
@@ -43,9 +41,10 @@ group references
 
 ### ④user_groups　　　　中間テーブル
 
-user references
-
-group references
+|column|type|
+|--:|--:|
+|user|references|
+|group|references|
 
 
 ### association
