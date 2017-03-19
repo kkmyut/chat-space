@@ -49,3 +49,4 @@ end
 gem 'haml-rails'
 #railsのerbhamlに変換するためのgem
 gem 'erb2haml'
+gem 'listen'
