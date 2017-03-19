@@ -28,13 +28,13 @@
 
 ### ③messages　
 
-|column|type|option|
-|--:|--:|--:|
-|text|string||
-|image|string||
-|user_id|references|foreign_key|
-|group_id|references|foreign_key|
+|column|type|
+|--:|--:|
+|text|string|
+|image|string|
 
+user references
+group references
 
 ### association
 * belongs_to :user
@@ -42,10 +42,9 @@
 
 ### ④user_groups　　　　中間テーブル
 
-|column|type|option|
-|--:|--:|--:|
-|user_id|references|foreign_key|
-|group_id|references|foreign_key|
+user references
+group references
+
 
 ### association
 * belongs_to :user
