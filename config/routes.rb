@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 root "chats#index"
-get "chat" => "chats#index"
+resources :chats, only: [:index]
 end
