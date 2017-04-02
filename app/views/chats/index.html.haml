@@ -1,13 +1,11 @@
 .header
   .header__comment チャットグループが作成されました。
 
-
 .contents
   .contents__left
     .contents__left__fontawesome.fa.fa-cog
     .contents__left__fontawesome.fa.fa-edit
     .contents__left__user こぶた
-    / .contents__left__user__fontawesome
     .contents__left__group
       %ul.contents__left__group__list
         %li#list-group 動物園
@@ -23,51 +21,25 @@
       %li#member MEMBERS:こぶた，たぬき，きつね，ねこ
     .contents__right__comment-space
       %ul.contents__right__comment-space__message
-        / %ul.ko
+
         %li#sender-name こぶた
         %li#time 9999/9/9 9時
         %li#message ぶひぶひ
-        / %ul.ko
+
         %li#sender-name たぬき
         %li#time 9999/9/9 10時
         %li#message ぽんぽん
-        / %ul.ko
+
         %li#sender-name  きつね
         %li#time 9999/9/9 11時
         %li#message こんこん
-        / %ul.ko
+
         %li#sender-name ねこ
         %li#time 9999/9/9 12時
         %li#message にゃーにゃー
-        / %li#time 9999/9/9 9時
-        / %li#sender-name こぶた
-        / %li#message ぶひぶひ
-        / %li#time 9999/9/9 10時
-        / %li#sender-name たぬき
-        / %li#message ぽんぽん
-        / %li#time 9999/9/9 11時
-        / %li#sender-name  きつね
-        / %li#message こんこん
-        / %li#time 9999/9/9 12時
-        / %li#sender-name ねこ
-        / %li#message にゃーにゃー
+
       .contents__right__comment-space__writting.clearfix
         .contents__right__comment-space__writting__send Send
         .contents__right__comment-space__writting__something
           .contents__right__comment-space__writting__something__fontawesome.fa.fa-photo
           .contents__right__comment-space__writting__something__type type a message
-
-
-
-/ここから部分テンプレートの実装
-
-/ - @chats.each do |chat|
-/ == render partial: "chat", locals: { chat: chat }
-
-
-/ - @groups.each do |group|
-/ == render partial: "group", locals: { group: group }
-
-
-
-
