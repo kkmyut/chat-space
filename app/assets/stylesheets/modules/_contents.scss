@@ -3,14 +3,10 @@
   clear: both;
   display: block;
 }
-
-
 html,body{
   height: 100%;
   width: 100%;
-  // background-color: #fff0ff;
 }
-
 .contents{
   height: 100%;
   &__left {
@@ -32,13 +28,10 @@ html,body{
       color: #ffffff;
       font-size: 16px;
       font-weight: bold;
-      // 指定はないけどとなりのgroup-spaceと高さ揃えた。
       height: 56px;
     }
     &__group {
-      // この下の行最終的にはいらない
       background-color: #2f3e51;
-      // この下の行最終的にはいらない...いるかも
       height: calc(100% - 96px);
       ul{
         li#list-group{
@@ -55,65 +48,48 @@ html,body{
          padding-bottom: 40px;
        }
      }
-
    }
  }
  &__right {
   float: left;
   height: 100%;
   width: calc(100vw - 300px);
-    // この下の行は最終的にはいらない
-    background-color: #ff89ff;
-    &__edit {
-      float: right;
-      color: #38aef0;
-      padding-right: 20px;
-      border: 1px solid #38aef0;
-      text-align: center;
-      vertical-align: middle;
-      margin-right: 40px;
-      margin-top: 28px;
-      padding-left: 20px;
-      padding-right: 20px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      // padding-top: 40px;
+  &__edit {
+    float: right;
+    color: #38aef0;
+    padding-right: 20px;
+    border: 1px solid #38aef0;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 40px;
+    margin-top: 28px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  &__group-space {
+    padding-top: 35px;
+    padding-bottom: 45px;
+    padding-left: 40px;
+    height: 16px;
+    background-color: #ffffff;
+    li#group{
+      font-size: 20px;
+      color: #333;
     }
-    &__group-space {
-      padding-top: 35px;
-      padding-bottom: 45px;
-      padding-left: 40px;
-      height: 16px;
-      background-color: #ffffff;
-      ul{
-        // padding-left: 40px;
-      }
-      li#group{
-        // padding-left: 20px;
-        font-size: 20px;
-        color: #333;
-      }
-      li#member{
-        // padding-left: 20px;
-        font-size: 12px;
-        color: #999;
-      }
-      &__members{
-
-      }
+    li#member{
+      font-size: 12px;
+      color: #999;
     }
-    &__comment-space {
-      // この下の行は最終的にはいらない
-      background-color: #cccccc;
-      // この下の行は最終的に入らない。
+  }
+  &__comment-space {
       height: calc(100% - 96px);
       position: relative;
       ul{
         padding-top: 46px;
-
       }
       &__message{
-
         li#sender-name{
           font-size: 16px;
           color: #434a54;
@@ -124,10 +100,8 @@ html,body{
         li#time{
           font-size: 11px;
           color: #888888;
-           padding-left: 20px;
-          // display: table-cell;
-          // padding-right: 80%;
-           display: inline-block;
+          padding-left: 20px;
+          display: inline-block;
         }
         li#message{
           font-size: 12px;
@@ -153,11 +127,8 @@ html,body{
           padding-top: 12px;
           height: 38px;
           margin-right: 40px;
-          // padding-left: 20px;
-          // padding-right: 20px;
         }
         &__something {
-          // padding: auto;
           background-color: #ffffff;
           width: 84%;
           height: 50px;
@@ -181,7 +152,3 @@ html,body{
     }
   }
 }
-
-// ul.ko{
-//   display: inline-block;
-// }
