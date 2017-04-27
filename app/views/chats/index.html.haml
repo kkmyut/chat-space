@@ -8,7 +8,7 @@
     .contents__left__group
       %ul.contents__left__group__list
         -@groups.each do |a|
-          =link_to edit_group_path (@group) do
+          =link_to group_chats_path (a) do
             %li#list-group=a.name
             -a.users.each do |b|
               %li#list-member=b.name
