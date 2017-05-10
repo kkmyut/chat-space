@@ -19,9 +19,10 @@ class GroupsController < ApplicationController
   end
   def update
    @group=Group.find(params[:id])
-   if
+    if current_user.id
     Group.find(params[:id]).update(group_params)
-    redirect_to root_path
+    redirect_to group_chats_path(@group)
+  end
   end
   private
   def group_params

@@ -8,16 +8,13 @@
     .contents__left__group
       %ul.contents__left__group__list
         -@groups.each do |a|
-          =link_to group_chats_path (a) do
-            %li#list-group=a.name
-            -a.users.each do |b|
-              %li#list-member=b.name
+          =render "group",a: a
   .contents__right
     .contents__right__edit=link_to 'Edit', edit_group_path(@group)
     %ul.contents__right__group-space
       %li#group=@group.name
       -@users.each do |b|
-        %li#member=b.name
+        =render "comment",b: b
     .contents__right__comment-space
       %ul.contents__right__comment-space__message
 
