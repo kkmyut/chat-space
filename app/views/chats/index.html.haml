@@ -4,7 +4,7 @@
       %i.fa.fa-cog.contents__left__fontawesome
     =link_to new_group_path do
       %i.fa.fa-edit.contents__left__fontawesome
-    .contents__left__user=link_to @user, edit_user_registration_path
+    .contents__left__user=link_to current_user.name, edit_user_registration_path
     .contents__left__group
       %ul.contents__left__group__list
         -@groups.each do |a|
