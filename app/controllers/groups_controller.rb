@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   def index
-   @user = current_user.name
-   @groups = current_user.groups
+    @user = current_user.name
+    @groups = current_user.groups
   end
   def new
     @group = Group.new
@@ -10,13 +10,18 @@ class GroupsController < ApplicationController
     @group= Group.find(params[:id])
   end
   def create
-    Group.create(group_params)
-    # binding.pry
-    redirect_to root_path
+    @group= Group.new(group_params)
+    if @group.save
+    redirect_to root_path,notice: "グループ作成しました。"
+    else
+    flash.now[:alert] = "失敗しました。"
+   end
   end
   def update
-    Group.find(params[:id]).update(group_params)
-    redirect_to root_path
+    @group=Group.find(params[:id])
+    if Group.find(params[:id]).update(group_params)
+    redirect_to group_chats_path(@group)
+  end
   end
   private
   def group_params
