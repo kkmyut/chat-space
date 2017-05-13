@@ -1,25 +1,25 @@
 class GroupsController < ApplicationController
   def index
-   @user = current_user.name
-   @groups = current_user.groups
+    @user = current_user.name
+    @groups = current_user.groups
   end
   def new
-   @group = Group.new
+    @group = Group.new
   end
   def edit
-   @group= Group.find(params[:id])
+    @group= Group.find(params[:id])
   end
   def create
     @group= Group.new(group_params)
     if @group.save
     redirect_to root_path,notice: "グループ作成しました。"
     else
-      flash.now[:alert] = "失敗しました。"
-    end
+    flash.now[:alert] = "失敗しました。"
+   end
   end
   def update
-   @group=Group.find(params[:id])
-   if Group.find(params[:id]).update(group_params)
+    @group=Group.find(params[:id])
+    if Group.find(params[:id]).update(group_params)
     redirect_to group_chats_path(@group)
   end
   end
