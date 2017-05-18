@@ -1,41 +1,27 @@
 .contents
   .contents__left
-    =link_to edit_user_registration_path do
+    = link_to edit_user_registration_path do
       %i.fa.fa-cog.contents__left__fontawesome
-    =link_to new_group_path do
+    = link_to new_group_path do
       %i.fa.fa-edit.contents__left__fontawesome
     .contents__left__user=link_to current_user.name, edit_user_registration_path
     .contents__left__group
       %ul.contents__left__group__list
-        -@groups.each do |a|
+        - @groups.each do |a|
           =render "group",group: a
   .contents__right
     .contents__right__edit=link_to 'Edit', edit_group_path(@group)
     %ul.contents__right__group-space
       %li#group=@group.name
-      -@users.each do |b|
-        =render "comment",user: b
+      - @users.each do |b|
+        = render "comment",user: b
     .contents__right__comment-space
       %ul.contents__right__comment-space__message
-
-        %li#sender-name こぶた
-        %li#time 9999/9/9 9時
-        %li#message ぶひぶひ
-
-        %li#sender-name たぬき
-        %li#time 9999/9/9 10時
-        %li#message ぽんぽん
-
-        %li#sender-name  きつね
-        %li#time 9999/9/9 11時
-        %li#message こんこん
-
-        %li#sender-name ねこ
-        %li#time 9999/9/9 12時
-        %li#message にゃーにゃー
-
+        - @messages.each do |c|
+          = render "message",message: c
+    = form_for [@group,@message] do |f|
       .contents__right__comment-space__writting.clearfix
-        .contents__right__comment-space__writting__send Send
+        = f.submit "Send",class: "contents__right__comment-space__writting__send"
         .contents__right__comment-space__writting__something
           .contents__right__comment-space__writting__something__fontawesome.fa.fa-photo
-          .contents__right__comment-space__writting__something__type type a message
+          = f.text_field :text,placeholder: "type a message",class: "contents__right__comment-space__writting__something__type"
