@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
+before_action :set_message, only: [:index,:new]
   def index
-    @message =Message.new
     @groups = current_user.groups
     @group = Group.find(params[:group_id])
     @user = current_user
@@ -9,7 +9,6 @@ class MessagesController < ApplicationController
   end
 
   def new
-    @message = Message.new
   end
 
   def create
@@ -20,10 +19,14 @@ class MessagesController < ApplicationController
     flash.now[:alert] = "送信失敗しました。"
   end
 end
-  private
+private
 
-  def message_params
-    params.require(:message).permit(:text,:image).merge(group_id: params[:group_id],user_id: current_user.id)
-  end
+def message_params
+  params.require(:message).permit(:text,:image).merge(group_id: params[:group_id],user_id: current_user.id)
+end
+
+def set_message
+  @message = Message.new
+end
 
 end

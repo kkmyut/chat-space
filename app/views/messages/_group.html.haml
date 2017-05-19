@@ -1,4 +1,4 @@
-=link_to group_messages_path (group) do
+= link_to group_messages_path (group) do
   %li#list-group=group.name
-  -group.users.each do |b|
+  - group.users.each do |b|
     %li#list-member=b.name
