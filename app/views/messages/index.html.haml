@@ -7,7 +7,7 @@
     .contents__left__user=link_to current_user.name, edit_user_registration_path
     .contents__left__group
       %ul.contents__left__group__list
-        - @groups.each do |a|
+        - current_user.groups.each do |a|
           =render "group",group: a
   .contents__right
     .contents__right__edit=link_to 'Edit', edit_group_path(@group)

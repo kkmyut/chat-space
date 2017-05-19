@@ -1,9 +1,9 @@
 class MessagesController < ApplicationController
+
 before_action :set_message, only: [:index,:new]
+
   def index
-    @groups = current_user.groups
     @group = Group.find(params[:group_id])
-    @user = current_user
     @users = @group.users
     @messages = @group.messages
   end
@@ -19,6 +19,7 @@ before_action :set_message, only: [:index,:new]
     flash.now[:alert] = "送信失敗しました。"
   end
 end
+
 private
 
 def message_params
