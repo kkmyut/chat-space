@@ -112,6 +112,13 @@ html,body{
           padding-left: 40px;
           padding-bottom: 40px;
         }
+        li#image{
+          img{
+          margin-left: 30px;
+          border: ridge 10px;
+          height:400px;
+        }
+        }
       }
       &__writting {
         position: fixed;
@@ -153,4 +160,7 @@ html,body{
       }
     }
   }
+}
+#message_image{
+ display: none;
 }

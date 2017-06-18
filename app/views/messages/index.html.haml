@@ -22,5 +22,7 @@
       .contents__right__comment-space__writting.clearfix
         = f.submit "Send",class: "contents__right__comment-space__writting__send"
         .contents__right__comment-space__writting__something
-          .contents__right__comment-space__writting__something__fontawesome.fa.fa-photo
           = f.text_field :text,placeholder: "type a message",class: "contents__right__comment-space__writting__something__type"
+          %label
+            .fa.fa-photo.contents__right__comment-space__writting__something__fontawesome
+            = f.file_field :image

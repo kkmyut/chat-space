@@ -16,7 +16,7 @@ before_action :set_message, only: [:index,:new]
     if @message.save
     redirect_to group_messages_path,notice:"メッセージを送信しました。"
     else
-    flash.now[:alert] = "送信失敗しました。"
+    redirect_to group_messages_path,alert:"送信失敗しました。"
   end
 end
 
