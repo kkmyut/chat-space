@@ -1,3 +1,8 @@
-%li#sender-name=message.user.name
-%li#time=message.created_at.strftime("%a %m/%d/%Y")
-%li#message=message.text
+%li#sender-name
+  = message.user.name
+%li#time
+  = message.created_at.strftime("%a %m/%d/%Y")
+%li#message
+  = message.text
+%li#image
+  = image_tag message.image.url if message.image.url
